@@ -1,0 +1,49 @@
+;// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.2.1'
+        //classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
+        classpath 'com.android.tools.build:gradle:2.4.0-alpha7'
+        classpath 'org.greenrobot:greendao-gradle-plugin:3.2.2'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        mavenCentral()
+        maven { url 'https://www.jitpack.io' }
+        maven {
+            url 'https://esri.bintray.com/arcgis'
+        }
+        maven {
+            url'http://dl.bintray.com/esri/arcgis'
+        }
+        maven { url 'https://maven.google.com' }
+        maven { url "https://dl.google.com/dl/android/maven2/"}
+
+    }
+}
+
+ext {
+    minSdkVersion = 21
+    targetSdkVersion = 28
+    compileSdkVersion = 28
+    buildToolsVersion = '28.0.3'
+
+    // App dependencies
+    constraintVersion='1.1.3'
+    multidexVersion = '1.0.3'
+    supportLibraryVersion = '28.0.0'
+    ijkPlayerVersion = '0.8.8'
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
